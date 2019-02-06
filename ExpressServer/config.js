@@ -1,5 +1,4 @@
 const config = {
-    controllersPaths: ['controllers'],
     dataPath: './ExpressServer/data/users.json',
 };
 

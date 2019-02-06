@@ -1,0 +1,4 @@
+{
+    "extends": "schibsted",
+    "root": true
+}
