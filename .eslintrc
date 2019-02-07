@@ -1,8 +1,0 @@
-{
-    "extends": [
-        "schibsted",
-        "eslint-config-schibsted-modules",
-        "eslint-config-schibsted-node"
-    ],
-    "root": true
-}

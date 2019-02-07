@@ -1,6 +1,6 @@
 const config = {
-    controllersPaths: ['controllers'],
-    dataPath: './HttpExpress/data/users.json',
+  controllersPaths: ['controllers'],
+  dataPath: './HttpExpress/data/users.json',
 };
 
 module.exports = config;
