@@ -1,19 +1,23 @@
 const express = require('express');
 const app = express();
+const path = require('path');
+const bodyParser = require('body-parser');
 
 const requestLogger = require('./plugins/requestLogger');
 const notFoundError = require('./plugins/notFoundError');
 
 const mainRoutes = require('./routes/main');
-const users = require('./routes/users');
+const usersRoutes = require('./routes/users');
 
 const dataService = require('./services/dataService');
+
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(requestLogger);
 
 app.use(mainRoutes);
-
-app.use('/admin',users);
+app.use('/admin',usersRoutes);
 
 app.use(notFoundError);
 

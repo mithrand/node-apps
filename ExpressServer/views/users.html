@@ -5,22 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>My Express App</title>
+  <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li>
+  <header class="header">
+    <nav class="header__nav">
+      <ul class="header__item-list">
+        <li  class="header__item active">
           <a href="/">Main</a>
         </li>
         <li><a href="/admin/users/">Add user</a></li>
       </ul>
     </nav>
   </header>
-  <form method="POST" enctype="applcation/json" action="/admin/users">
-    <span>Insert your username</span>
-    <input type="text" name="name" />
-    <button type="submit">Add user</button>
-  </form>
+  <main>
+    <form class="product-form" action="/admin/users" method="POST">
+        <div class="form-control">
+            <label for="title">User</label>
+            <input type="text" name="user" id="userInput">
+        </div>
+        <button type="submit">Add Product</button>
+    </form>
+</main>
 </body>
 </html>
