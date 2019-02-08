@@ -2,45 +2,57 @@ const path = require('path');
 const fs = require('fs');
 const config = require('../config');
 
-const dataFilePath = path.join(config.dataPath);
-let users = [];
+class DataService {
+  constructor() {
+    this.users = [];
+    this.dataFilePath = path.join(config.dataPath);
+  }
 
-const saveUsers = () => {
-  const data = JSON.stringify(users);
-  fs.writeFile(dataFilePath, data, (error) => {
-    if (error) {
-      console.error(error);
-    }
-    console.info('Users saved');
-  });
-};
-
-const userDataService = {
-  start: () => new Promise((resolve, reject) => {
-    fs.readFile(dataFilePath, { encoding: 'utf8' }, (error, data) => {
-      if (error) {
-        users = [];
-        console.error(error, 'dataService - Error in loadUsers()');
-        return reject();
-      }
-      if (!data) {
-        users = [];
+  start() {
+    return new Promise((resolve, reject) => {
+      fs.readFile(this.dataFilePath, { encoding: 'utf8' }, (error, data) => {
+        if (error) {
+          this.users = [];
+          console.error(error, 'dataService - Error in loadUsers()');
+          return reject();
+        }
+        if (!data) {
+          this.users = [];
+          return resolve();
+        }
+        this.users = JSON.parse(data);
         return resolve();
-      }
-      users = JSON.parse(data);
-      return resolve();
+      });
     });
-  }),
-  getUsers: () => users,
-  getUser: name => users.find(user => user.name === name),
-  deleteUser: (name) => {
-    users = users.filter(user => user.name !== name);
-    saveUsers();
-  },
-  addUser: (user) => {
-    users = users.concat([user]);
-    saveUsers();
-  },
-};
+  }
 
-module.exports = userDataService;
+  getUsers() {
+    return this.users;
+  }
+
+  getUser(name) {
+    return this.users.find(user => user.name === name);
+  }
+
+  deleteUser(name) {
+    this.users = this.users.filter(user => user.name !== name);
+    this.saveUsers();
+  }
+
+  addUser(user) {
+    this.users = this.users.concat([user]);
+    this.saveUsers();
+  }
+
+  saveUsers() {
+    const data = JSON.stringify(this.users);
+    fs.writeFile(this.dataFilePath, data, (error) => {
+      if (error) {
+        console.error(error);
+      }
+      console.info('Users saved');
+    });
+  }
+}
+
+module.exports = new DataService();
