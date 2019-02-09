@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    block metas
+    title #{pageTitle}
+    link(rel="stylesheet",href="/css/main.css")
+    block styles
+    block scripts
+  body
+    header.header
+      nav.header__nav
+        ul.header__item-list
+          li.header__item
+            a(href="/") Main
+          li.header__item
+            a(href="/admin/users") Add user
+    main
+      block content

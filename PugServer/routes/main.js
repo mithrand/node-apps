@@ -1,7 +1,6 @@
 const router = require('express').Router();
-const path = require('path');
-const basePath = require('../utils/basePath');
+const dataService = require('../services/dataService');
 
-router.get('/', (req, res) => res.render('main'));
+router.get('/', (req, res) => res.render('main', { pageTitle: 'My Pug User App!!', users: dataService.getUsers }));
 
 module.exports = router;
