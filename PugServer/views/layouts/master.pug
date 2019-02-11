@@ -10,12 +10,12 @@ html(lang="en")
     block styles
     block scripts
   body
-    header.header
-      nav.header__nav
-        ul.header__item-list
-          li.header__item
+    header.main-header
+      nav.main-header__nav
+        ul.main-header__item-list
+          li.main-header__item
             a(href="/" class={active: req.url === "/"}) Main
-          li.header__item
+          li.main-header__item
             a(href="/admin/users" class={active: req.url === "/users"}) Add user
     main
       block content

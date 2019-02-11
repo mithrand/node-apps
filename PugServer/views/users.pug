@@ -1,12 +1,11 @@
 extends layouts/master
+block styles
+  link(rel="stylesheet",href="/css/product.css")
+  link(rel="stylesheet",href="/css/forms.css")
 
 block content
-  form(class="user-form",action="/admin/users",method="POST")
+  form(class="product-form",action="/admin/users",method="POST")
     div(class="form-control")
       label(for="user") User
       input(type="text",name="name",id="userInput")
     button(type="submit") Add User
-  if users && users.length > 0 
-    each user in users  
-      ul(class="users-list")
-        li(class="users__item") #{user.name}

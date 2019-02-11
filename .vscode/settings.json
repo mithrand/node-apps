@@ -1,6 +1,6 @@
 {
   "workbench.iconTheme": "material-icon-theme",
-  "window.zoomLevel": 0,
+  "window.zoomLevel": 1,
   "editor.tabSize": 2,
   "editor.formatOnSave": true,
   "prettier.eslintIntegration": true

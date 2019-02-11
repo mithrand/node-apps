@@ -5,6 +5,8 @@ const {
 
 const notFoundError = router.use((req, res) => res
   .status(NOT_FOUND)
-  .render('404'));
+  .render('404', {
+    req
+  }));
 
 module.exports = notFoundError;

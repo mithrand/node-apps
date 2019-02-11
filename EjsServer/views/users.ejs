@@ -1,22 +1,15 @@
 <%- include('includes/start') %>
+<link rel="stylesheet" href="/css/product.css" />
+<link rel="stylesheet" href="/css/forms.css" />
 </head>
 
 <%- include('includes/navigation') %>
-<form class="user-form" action="/admin/users" method="POST">
+<form class="product-form" action="/admin/users" method="POST">
   <div class="form-control">
     <label for="user">User</label>
     <input type="text" name="name" id="userInput" />
     <button type="submit"> Add User </button>
   </div>
 </form>
-<% if (users && users.length > 0) { %>
-<%   for( const user of users ) { %>
-<ul class="users-list">
-  <li class="users__item">
-    <%=user.name %>
-  </li>
-</ul>
-<%   } %>
-<% }%>
 
 <%- include('includes/end') %>
