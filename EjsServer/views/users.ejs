@@ -1,7 +1,7 @@
-<%- include('includes/start'); -%>
+<%- include('includes/start') %>
 </head>
 
-<%- include('includes/navigation'); -%>
+<%- include('includes/navigation') %>
 <form class="user-form" action="/admin/users" method="POST">
   <div class="form-control">
     <label for="user">User</label>
@@ -9,7 +9,7 @@
     <button type="submit"> Add User </button>
   </div>
 </form>
-<% if users && users.length > 0 { %>
+<% if (users && users.length > 0) { %>
 <%   for( const user of users ) { %>
 <ul class="users-list">
   <li class="users__item">
@@ -19,10 +19,4 @@
 <%   } %>
 <% }%>
 
-
-input(type="text",name="name",id="userInput")
-button(type="submit") Add User
-if users && users.length > 0
-each user in users
-ul(class="users-list")
-li(class="users__item") #{user.name}
+<%- include('includes/end') %>

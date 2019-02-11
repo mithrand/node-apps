@@ -1,11 +1,11 @@
-<%- include('includes/start'); -%>
+<%- include('includes/start') %>
 </head>
 
-<%- include('includes/navigation'); -%>
+<%- include('includes/navigation') %>
 
 <h1>My products</h1>
 <p> list of all products </p>
-<% if users && users.length > 0 { %>
+<% if (users && users.length > 0) { %>
 <% for( const user of users ) { %>
 <ul class="users-list">
   <li class="users__item">
@@ -17,4 +17,4 @@
 <span> No users </span>
 <% } %>
 
-<%- include('includes/end'); -%>
+<%- include('includes/end') %>

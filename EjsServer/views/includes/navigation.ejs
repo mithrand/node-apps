@@ -2,10 +2,10 @@
   <nav class="header__nav">
     <ul class="header__item-list">
       <li class="header__item">
-        <a href="/" class="<%= req.url === '/' ? 'active' %>">Main</a>
+        <a href="/" class="<%= req.url === '/' ? 'active' : '' %>">Main</a>
       </li>
       <li class="header__item">
-        <a href="/admin/users" class="<%= req.url === '/users' ? 'active' %>">Add user</a>
+        <a href="/admin/users" class="<%= req.url === '/users' ? 'active' : '' %>">Add user</a>
       </li>
     </ul>
   </nav>
