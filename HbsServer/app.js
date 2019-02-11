@@ -4,6 +4,7 @@ const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
 
+const hbsEngine = require('express-handlebars');
 const requestLogger = require('./plugins/requestLogger');
 const notFoundError = require('./plugins/notFoundError');
 
@@ -12,12 +13,23 @@ const usersRoutes = require('./routes/users');
 
 const dataService = require('./services/dataService');
 
-app.set('view engine', 'pug');
+// registering hbs as templace engine
+app.engine(
+  'hbs',
+  hbsEngine({
+    layoutsDir: 'HbsServer/views/layouts/',
+    defaultLayout: 'master',
+    extname: 'hbs',
+  }),
+);
+
+app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
 
 app.use(bodyParser.urlencoded({
   extended: false,
 }));
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(requestLogger);

@@ -8,7 +8,8 @@
     "start:httpServer": "nodemon ./HttpServer/app.js",
     "start:ExpressServer": "nodemon ./ExpressServer/app.js",
     "start:PugServer": "nodemon ./PugServer/app.js",
-    "start:EjsServer": "nodemon ./EjsServer/app.js"
+    "start:EjsServer": "nodemon ./EjsServer/app.js",
+    "start:HbsServer": "nodemon ./HbsServer/app.js"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
     "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
     "http-status-codes": "^1.3.0",
     "pug": "^2.0.3"
   },

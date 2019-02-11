@@ -4,6 +4,9 @@ const dataService = require('../services/dataService');
 router.get('/users', (req, res) => res.render('users', {
   pageTitle: 'Admin - Adding users',
   users: dataService.getUsers(),
+  activeUsers: true,
+  formsCSS: true,
+  productCSS: true,
   req,
 }));
 
