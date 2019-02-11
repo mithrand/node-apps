@@ -12,7 +12,7 @@ const usersRoutes = require('./routes/users');
 
 const dataService = require('./services/dataService');
 
-app.set('view engine', 'pug');
+app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 app.use(bodyParser.urlencoded({

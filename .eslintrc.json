@@ -9,8 +9,11 @@
   "rules": {
     "quotes": ["error", "single"],
     "linebreak-style": "off",
-    "no-console": ["error", { "allow": ["warn", "error", "info"] }],
+    "no-console": ["error", {
+      "allow": ["warn", "error", "info"]
+    }],
     "import/no-dynamic-require": "off",
-    "global-require": "off"
+    "global-require": "off",
+    "eol-last": "off"
   }
 }

@@ -1,5 +1,5 @@
 const config = {
-  dataPath: './PugServer/data/users.json',
+  dataPath: './EjsServer/data/users.json',
 };
 
 module.exports = config;

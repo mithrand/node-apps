@@ -12,7 +12,9 @@ const usersRoutes = require('./routes/users');
 
 const dataService = require('./services/dataService');
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+  extended: false,
+}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(requestLogger);
