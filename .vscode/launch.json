@@ -29,6 +29,15 @@
             "restart": true,
             "runtimeExecutable": "nodemon",
             "console": "integratedTerminal",
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Mvc project",
+            "program": "${workspaceFolder}\\MvcProject\\app.js",
+            "restart": true,
+            "runtimeExecutable": "nodemon",
+            "console": "integratedTerminal",
         }
     ]
 }

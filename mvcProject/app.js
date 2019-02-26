@@ -6,8 +6,7 @@ const app = express();
 
 const notFoundError = require('./plugins/notFoundError');
 
-const mainRoutes = require('./routes/admin');
-const usersRoutes = require('./routes/shop');
+const routes = require('./routes');
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -17,10 +16,10 @@ app.use(
     extended: false,
   }),
 );
+
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(mainRoutes);
-app.use('/admin', usersRoutes);
+app.use(routes);
 
 app.use(notFoundError);
 

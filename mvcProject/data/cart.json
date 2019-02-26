@@ -1,1 +1,1 @@
-{ "products": [], "totalPrice": 0 }
+{"products":[{"title":"A raquet","imageUrl":"https://upload.wikimedia.org/wikipedia/commons/3/3e/Tennis_Racket_and_Balls.jpg","price":60.96,"description":"An amazing raquet","id":"88a5d400-3965-11e9-9890-0f78f2301baa","qty":2},{"title":"A book","imageUrl":"https://upload.wikimedia.org/wikipedia/commons/3/37/Empty_book.jpg","price":6.5,"description":"An amazing book!","id":"7183e460-3965-11e9-878a-b51dc72f3185","qty":2}],"totalPrice":134.92000000000002}

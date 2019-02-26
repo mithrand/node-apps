@@ -8,53 +8,49 @@ const readFile = promisify(fs.readFile);
 const writeFile = promisify(fs.writeFile);
 
 const basePath = require('../utils/basePath');
+const Cart = require('./cart');
 
-const filePath = path.join(basePath, 'data', 'product.json');
+const filePath = path.join(basePath, 'data', 'products.json');
 
 const getProductsFromStorage = async () => {
   try {
     const content = await readFile(filePath);
     return JSON.parse(content) || [];
   } catch (err) {
+    console.error(err);
     return [];
   }
 };
 
 const saveProductsToStorage = async products => writeFile(filePath, JSON.stringify(products));
 
-class Product {
-  constructor(id, title, imageUrl, description, price) {
-    this.id = id;
-    this.title = title;
-    this.imageUrl = imageUrl;
-    this.description = description;
-    this.price = price;
-  }
-
-  async save() {
+class Products {
+  static async add(product) {
+    const newProduct = product;
     let products = await getProductsFromStorage();
-    if (!this.id) {
-      this.id = uuid();
+    if (!newProduct.id) {
+      newProduct.id = uuid();
     } else {
-      products = products.filter(prod => prod.id !== this.id);
+      products = products.filter(prod => prod.id !== newProduct.id);
     }
-    products.push(this);
+    products.push(newProduct);
     await saveProductsToStorage(products);
   }
 
   static async deleteById(id) {
     const products = await getProductsFromStorage().filter(prod => prod !== id);
+    await Cart.removeProduct(id);
     return saveProductsToStorage(products);
   }
 
-  static async all() {
+  static async getAll() {
     return getProductsFromStorage();
   }
 
   static async findById(id) {
     const products = await getProductsFromStorage();
-    return products.find(prod => prod === id);
+    return products.find(prod => prod.id === id);
   }
 }
 
-module.exports = Product;
+module.exports = Products;

@@ -1,0 +1,11 @@
+[{
+  "title": "Amazing book",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/37/Empty_book.jpg",
+  "price": "10",
+  "description": "An amazing book"
+}, {
+  "title": "A raquet",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Tennis_Racket_and_Balls.jpg",
+  "price": "4",
+  "description": "A raquet"
+}]

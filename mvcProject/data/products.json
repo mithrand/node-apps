@@ -1,16 +1,1 @@
-[
-  {
-    "id": "123245",
-    "title": "A Book",
-    "imageUrl": "https://www.publicdomainpictures.net/pictures/10000/velka/1-1210009435EGmE.jpg",
-    "description": "This is an awesome book!",
-    "price": "19"
-  },
-  {
-    "id": "0.41607315815753076",
-    "title": "fasfd",
-    "imageUrl": "fdasfs",
-    "description": "fadsfads",
-    "price": "12"
-  }
-]
+[{"title":"A book","imageUrl":"https://upload.wikimedia.org/wikipedia/commons/3/37/Empty_book.jpg","price":6.5,"description":"An amazing book!","id":"7183e460-3965-11e9-878a-b51dc72f3185"},{"title":"A raquet","imageUrl":"https://upload.wikimedia.org/wikipedia/commons/3/3e/Tennis_Racket_and_Balls.jpg","price":60.96,"description":"An amazing raquet","id":"88a5d400-3965-11e9-9890-0f78f2301baa"}]

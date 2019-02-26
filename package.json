@@ -9,7 +9,8 @@
     "start:ExpressServer": "nodemon ./ExpressServer/app.js",
     "start:PugServer": "nodemon ./PugServer/app.js",
     "start:EjsServer": "nodemon ./EjsServer/app.js",
-    "start:HbsServer": "nodemon ./HbsServer/app.js"
+    "start:HbsServer": "nodemon ./HbsServer/app.js",
+    "start:mvc": "nodemon ./MvcProject/app.js"
   },
   "repository": {
     "type": "git",

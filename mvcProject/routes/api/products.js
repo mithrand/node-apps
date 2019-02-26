@@ -1,9 +1,8 @@
 const router = require('express').Router();
+const productsController = require('../../controllers/api/productsController');
 
-router.get('/products/:productId', adminController.getAddProduct);
-router.post('/products/:productId', adminController.postAddProduct);
-router.put('/products/:productId', adminController.postAddProduct);
-router.delete('/products/:productId', adminController.postAddProduct);
-router.get('/products', adminController.getAddProduct);
+router.post('/products', productsController.addProduct);
+router.post('/products/:productId/delete', productsController.deleteProduct);
+
 
 module.exports = router;
